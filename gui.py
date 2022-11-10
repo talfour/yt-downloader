@@ -192,10 +192,10 @@ class DownloaderApp(UserControl):
         self.progression.visible = True
         self.update()
         download = get_file(links)
-        if download != "":
-            self.open_dl(self.dlg_dl_error)
-        else:
+        if download == True:
             self.open_dl(self.dlg)
+        else:
+            self.open_dl(self.dlg_dl_error)
         self.progression.visible = False
         self.update()
 
